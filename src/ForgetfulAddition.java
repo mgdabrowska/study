@@ -13,11 +13,11 @@ public class ForgetfulAddition {
 	public static int minNumber(String expression) {
 		int Min = 1000000;
 				//(int) (Math.pow(2, 31)-1);
-		for (int i=0; i<= expression.length(); i++){
+		for (int i=1; i< expression.length(); i++){
 			String liczba1 = expression.substring(0,i);
-			String liczba2 = expression.substring(i+1);
+			String liczba2 = expression.substring(i);
 			int liczba3 = Integer.parseInt(liczba1);  
-			int liczba4 = Integer.parseInt(liczba2);
+			int liczba4 = Integer.parseInt( liczba2);
 			int suma = liczba3 +liczba4;
 			System.out.println(suma);
 			if(Min>suma){

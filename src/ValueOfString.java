@@ -1,4 +1,3 @@
-
 public class ValueOfString {
 
 	public static void main(String[] args) {
@@ -7,32 +6,32 @@ public class ValueOfString {
 		System.out.println(findValue("y") == 25);
 		System.out.println(findValue("aaabbc") == 47);
 		System.out.println(findValue("topcoder") == 558);
-		System.out.println(findValue("thequickbrownfoxjumpsoverthelazydog") == 11187);
+		System.out
+				.println(findValue("thequickbrownfoxjumpsoverthelazydog") == 11187);
 		System.out.println(findValue("zyxwvutsrqponmlkjihgfedcba") == 6201);
 	}
 
 	public static int findValue(String s) {
-		int liczba=0;
 		int suma = 0;
-		for (int i=0; i<s.length(); i++){
-			for(int j=0; j<s.length(); j++){
-			if(s.charAt(i) >=  s.charAt(j)){
-				//System.out.println(j);
-				liczba = liczba+1;
+		for (int i = 0; i < s.length(); i++) {
+			int liczba = 0;
+			for (int j = 0; j < s.length(); j++) {
+				if (s.charAt(i) >= s.charAt(j)) {
+					// System.out.println(j);
+					liczba = liczba + 1;
+				}
+
 			}
-		
-			}
-			//System.out.println("obrotów by³"+liczba);
+			// System.out.println("obrotów by³"+liczba);
 			char litera = s.charAt(i);
-			int liczba1 = litera - 'a'+1;
-			//System.out.println("litera to"+ liczba1);
+			int liczba1 = litera - 'a' + 1;
+			// System.out.println("litera to"+ liczba1);
 			int razem = liczba * liczba1;
-			//System.out.println(razem);
-			liczba=0;
-			 suma = suma + razem;
-			
-			//System.out.println(liczba);
-			
+			// System.out.println(razem);
+			suma = suma + razem;
+
+			// System.out.println(liczba);
+
 		}
 		return suma;
 	}

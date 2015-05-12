@@ -6,7 +6,12 @@ public class ListTest {
 		list.add(1);
 		list.add(3);
 		list.add(6);
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<list.size(); i++) {
+		   System.out.println(list.get(i)+" ");
+		}
+		//list.remove(3);
+		list.remove(0);
+		for(int i=0; i<list.size(); i++) {
 		   System.out.println(list.get(i)+" ");
 		}
 	}

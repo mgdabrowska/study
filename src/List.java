@@ -4,10 +4,11 @@ public class List {
 	int get(int index) {
 		return value[index];
 	}
-	int size(){
-		int ile =0;
+
+	int size() {
+		int ile = 0;
 		for (int i = 0; i < value.length; i++) {
-			 ile ++;
+			ile++;
 		}
 		return ile;
 	}
@@ -19,14 +20,26 @@ public class List {
 
 		}
 		value1[value.length] = element;
-		value=value1;
+		value = value1;
 	}
-	void remove(int index){
-		int[] value2 = new int[value.length-1]; 
-		for (int i = index; i < value.length; i++) {
-			value2[i]=value[i+1];
+
+	void remove(int index) {
+		int[] value2 = new int[value.length - 1];
+		for (int i = 0; i < value2.length; i++) {
+			if (i != index){
+				value2[i] = value[i];
+			}
+			for (int j = index; j < value2.length; j++) {
+				value2[i] = value[i+1];
+				
+			}
 		}
-		
-		value =value2;
+		value = value2;
 	}
+
+/*	void addAt(int index, int element) {
+		int tmp = 0;
+		int[] value3 = new int[value.length + 1];
+	}
+ */
 }

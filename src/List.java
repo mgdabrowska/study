@@ -30,7 +30,7 @@ public class List {
 				value2[i] = value[i];
 			}
 			for (int j = index; j < value2.length; j++) {
-				value2[i] = value[i+1];
+				value2[j] = value[j+1];
 				
 			}
 		}

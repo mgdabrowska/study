@@ -10,7 +10,7 @@ public class ListTest {
 		   System.out.println(list.get(i)+" ");
 		}
 		//list.remove(3);
-		list.remove(0);
+		list.remove(2);
 		for(int i=0; i<list.size(); i++) {
 		   System.out.println(list.get(i)+" ");
 		}

@@ -25,10 +25,9 @@ public class List {
 			if (i != index) {
 				value1[i] = value[i];
 			}
-			for (int j = index; j < value1.length; j++) {
-				value1[j] = value[j + 1];
-
-			}
+		}
+		for (int j = index; j < value1.length; j++) {
+			value1[j] = value[j + 1];
 		}
 		value = value1;
 	}

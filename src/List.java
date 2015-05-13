@@ -52,14 +52,14 @@ public class List {
 	}
 
 	void change(int index, int element) {
-		int[] value1 = new int[value.length];
-		for (int i = 0; i < value1.length; i++) {
+		//int[] value1 = new int[value.length];
+		for (int i = 0; i < value.length; i++) {
 			if (i != index)
-				value1[i] = value[i];
+				 value[i]=value[i];
 
 		}
-		value1[index] = element;
-		value = value1;
+		value[index] = element;
+		
 
 	}
 

@@ -3,16 +3,18 @@ public class ListTest {
 
 	public static void main(String[] args) {
 			List list = new List();
-			list.add(1);
-			list.add(3);
-			list.add(6);
-			list.addAt(1, 2);
-			list.change(3, 4);
+			list.add(new Student("Gosia", "Dabrowska", "13 marca 1990r", "90031307568"));
+			list.add(new Student("Adam", "Stawicki","8 marca 1991r",
+					"91039198346"));
+			//list.add(student1);
+			list.addAt(1, new Student("Jan", "Kowalski", "15 maja 1989r",
+					"89051576893"));
+			list.change(3, new Student("Maciej", "Kwiatkowski","12 czerwiec 1898r","98061209456"));
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i) + " ");
 			}
 			System.out.println("--------");
-			list.remove(3);
+			list.remove(2);
 			list.remove(0);
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i) + " ");

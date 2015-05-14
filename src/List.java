@@ -1,7 +1,7 @@
 public class List {
-	int[] value = new int[0];
+	Student[] value = new Student[0];
 
-	int get(int index) {
+	Student get(int index) {
 		return value[index];
 	}
 
@@ -9,8 +9,8 @@ public class List {
 		return value.length;
 	}
 
-	void add(int element) {
-		int[] value1 = new int[value.length + 1];
+	void add(Student element) {
+		Student[] value1 = new Student[value.length + 1];
 		for (int i = 0; i < value.length; ++i) {
 			value1[i] = value[i];
 
@@ -20,7 +20,7 @@ public class List {
 	}
 
 	void remove(int index) {
-		int[] value1 = new int[value.length - 1];
+		Student[] value1 = new Student[value.length - 1];
 		for (int i = 0; i < value1.length; i++) {
 			if (i != index) {
 				value1[i] = value[i];
@@ -32,8 +32,8 @@ public class List {
 		value = value1;
 	}
 
-	void addAt(int index, int element) {
-		int[] value1 = new int[value.length + 1];
+	void addAt(int index, Student element) {
+		Student[] value1 = new Student[value.length + 1];
 		for (int i = 0; i < index; i++) {
 			value1[i] = value[i];
 
@@ -46,7 +46,7 @@ public class List {
 		value = value1;
 	}
 
-	void change(int index, int element) {
+	void change(int index, Student element) {
 		value[index] = element;
 
 	}

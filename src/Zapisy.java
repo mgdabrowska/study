@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Zapisy {
 	public static void main(String[] args) {
-		while(true) {
+		List list = new List();
+		while (true) {
 
 			System.out.println("");
 			System.out.println("1 - Dodaj studenta");
@@ -14,9 +15,8 @@ public class Zapisy {
 
 			Scanner sc = new Scanner(System.in);
 			String liczba = sc.nextLine();
-			List list = new List();
 
-			if(("1".equals(liczba))){
+			if (("1".equals(liczba))) {
 
 				System.out.print("Podaj imiê  ");
 				String imie = sc.nextLine();
@@ -26,26 +26,26 @@ public class Zapisy {
 				String pesel1 = sc.nextLine();
 				System.out.println();
 
-				list.add(new Student(imie + " ", nazwisko + " ", " ", pesel1 + " "));
+				list.add(new Student(imie + " ", nazwisko + " ", " ", pesel1
+						+ " "));
 
 			} else if ("2".equals(liczba)) {
-				
 				for (int i = 0; i < list.size(); i++) {
-					Student st =  list.get(i);
+					Student st = list.get(i);
 					System.out.print("  " + st + " ");
 				}
-			  
-			  } else if ("3".equals(liczba)) {
-			  
-			  } else if ("4".equals(liczba)) {
-			 
-			  } else if ("5".equals(liczba)) {
-			  
-			 }else if("6".equals(liczba)){
-				 break;
-				 
-			 }
-			 
+				System.out.println(" ");
+
+			} else if ("3".equals(liczba)) {
+
+			} else if ("4".equals(liczba)) {
+
+			} else if ("5".equals(liczba)) {
+
+			} else if ("6".equals(liczba)) {
+				break;
+
+			}
 
 		}
 	}

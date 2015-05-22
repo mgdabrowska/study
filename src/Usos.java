@@ -28,7 +28,7 @@ public class Usos {
 				System.out.println();
 
 				list.add(new Student(imie + " ", nazwisko + " ", " ", pesel1
-						+ " "));
+						+ " ", ""));
 
 			} else if ("2".equals(liczba)) {
 				for (int i = 0; i < list.size(); i++) {
@@ -48,6 +48,13 @@ public class Usos {
 				
 				}
 			} else if ("4".equals(liczba)) {
+				System.out.print("Podaj numer studenta  ");
+				int nrStudenta = sc.nextInt();
+				System.out.print("Podaj numer przedmiotu  ");
+				int nrPrzedmiotu = sc.nextInt();
+				
+				 System.out.println(" "+ list.get(nrStudenta)+" "+ subject.get(nrPrzedmiotu)+""); 
+				
 
 			} else if ("5".equals(liczba)) {
 
@@ -57,5 +64,6 @@ public class Usos {
 			}
 
 		}
+		 
 	}
 }

@@ -5,14 +5,14 @@ class Student {
 	String surname;
 	String birthDate;
 	String pesel;
-	String ListSubject;
+	ListSubject;
 
-	Student(String name, String surname, String birthDate, String pesel, String ListSubject ) {
+	Student(String name, String surname, String birthDate, String pesel ) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;
 		this.pesel = pesel;
-		this.ListSubject = ListSubject;
+	
 
 	}
 

@@ -13,28 +13,11 @@ public class ListTest {
 		 String pesel1= sc.nextLine();
 		 System.out.println();
 		 
-		list.add(new Student(imie+ " "  , nazwisko+" "  , " ",pesel1+" " ,"" ));
-	//	list.add(new Student(imie+ " "  , nazwisko+" "  , " ",pesel1+" " ));
-
-		// list.add(student1);
-		//list.addAt(1, new Student("Jan ", "Kowalski ", "15 maja 1989r ",
-			//	"89051576893 "));
-		/*list.change(0, new Student("Maciej ", "Kwiatkowski ",
-				"12 czerwiec 1898r ", "98061209456 "));*/
+		list.add(new Student(imie+ " "  , nazwisko+" "  , " ",pesel1+" " , new ListSubject()));
+	
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println("  "+ list.get(i) + " ");
 		}
-		/*System.out.println("--------");
-		list.remove(2);
-		list.remove(0);
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i) + " ");
-		}*/
-		// w tym miejscu powinna wypisac 2 3
-		//System.out.println("---------");
-	//	list.remove(0);
-		// list.remove(0);
-		//System.out.println(list.size());
-		// w tym miejscu powinno wypisaæ
+		
 	}
 }

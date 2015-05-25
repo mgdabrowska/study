@@ -27,7 +27,7 @@ public class Usos {
 				String pesel1 = sc.nextLine();
 				System.out.println();
 
-				list.add(new Student(imie + " ", nazwisko + " ", pesel1+ " ", 
+				list.add(new Student(imie + " ", nazwisko + " ", pesel1+ " ","", 
 						new ListSubject()));
 
 			} else if ("2".equals(liczba)) {

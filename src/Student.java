@@ -7,7 +7,7 @@ class Student {
 	String pesel;
 	ListSubject mySubjects;
 
-	Student(String name, String surname, String birthDate, ListSubject mySubject) {
+	Student(String name, String surname, String birthDate,String pesel, ListSubject mySubjects) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;

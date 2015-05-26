@@ -27,36 +27,39 @@ public class Usos {
 				String pesel1 = sc.nextLine();
 				System.out.println();
 
-				list.add(new Student(imie + " ", nazwisko + " ", pesel1+ " ","", 
-						new ListSubject()));
+				list.add(new Student(imie + " ", nazwisko + " ", pesel1 + " ",
+						"", new ListSubject()));
 
 			} else if ("2".equals(liczba)) {
-				//for (int i = 0; i < list.size(); i++) {
-					//Student st = list.get(i);
-					System.out.print("  " + list + " ");
-				//}
+				// for (int i = 0; i < list.size(); i++) {
+				// Student st = list.get(i);
+				System.out.print("  " + list + " ");
+				// }
 				System.out.println(" ");
 
 			} else if ("3".equals(liczba)) {
 				System.out.print("Podaj nazwê  ");
 				String przedmiot = sc.nextLine();
-				
+
 				subject.add(new Subject(przedmiot + " "));
-				System.out.println(subject+ ",");
-				//for (int i = 0; i < subject.size(); i++) {
-					
-					//System.out.print("  " + subject.get(i) + " ");
-				
-				//}
+				System.out.println(subject + ",");
+				// for (int i = 0; i < subject.size(); i++) {
+
+				// System.out.print("  " + subject.get(i) + " ");
+
+				// }
 			} else if ("4".equals(liczba)) {
 				System.out.print("Podaj numer studenta  ");
 				int nrStudenta = sc.nextInt();
 				System.out.print("Podaj numer przedmiotu  ");
 				int nrPrzedmiotu = sc.nextInt();
-				
-				 System.out.println(" "+ list.get(nrStudenta)+" "+ subject.get(nrPrzedmiotu)+""); 
-				 ListSubject przedmiotyStudenta = list.get(nrStudenta).mySubjects;
-				 System.out.println(przedmiotyStudenta);
+
+				System.out.println(" " + list.get(nrStudenta) + " "
+						+ subject.get(nrPrzedmiotu) + "");
+				ListSubject przedmiotyStudenta = list.get(nrStudenta).mySubjects;
+				ListSubject przedmiotyDodane = przedmiotyStudenta.add(subject
+						.get(nrPrzedmiotu));
+				System.out.println(przedmiotyDodane);
 
 			} else if ("5".equals(liczba)) {
 
@@ -66,6 +69,6 @@ public class Usos {
 			}
 
 		}
-		 
+
 	}
 }

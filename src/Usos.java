@@ -33,8 +33,8 @@ public class Usos {
 			} else if ("2".equals(liczba)) {
 				// for (int i = 0; i < list.size(); i++) {
 				// Student st = list.get(i);
-				System.out.print("  " + list + " ");
 				// }
+				System.out.print("  " + list + " ");
 				System.out.println(" ");
 
 			} else if ("3".equals(liczba)) {
@@ -44,9 +44,7 @@ public class Usos {
 				subject.add(new Subject(przedmiot + " "));
 				System.out.println(subject + ",");
 				// for (int i = 0; i < subject.size(); i++) {
-
 				// System.out.print("  " + subject.get(i) + " ");
-
 				// }
 			} else if ("4".equals(liczba)) {
 				System.out.print("Podaj numer studenta  ");
@@ -57,9 +55,8 @@ public class Usos {
 				System.out.println(" " + list.get(nrStudenta) + " "
 						+ subject.get(nrPrzedmiotu) + "");
 				ListSubject przedmiotyStudenta = list.get(nrStudenta).mySubjects;
-				ListSubject przedmiotyDodane = przedmiotyStudenta.add(subject
-						.get(nrPrzedmiotu));
-				System.out.println(przedmiotyDodane);
+				przedmiotyStudenta.add(subject.get(nrPrzedmiotu));
+				System.out.println("");
 
 			} else if ("5".equals(liczba)) {
 

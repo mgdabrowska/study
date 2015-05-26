@@ -50,7 +50,15 @@ void change(int index, Subject element) {
 	value[index] = element;
 
 }
+public String toString() {
+	String result = "Lista przedmiotów : {";
+	for (int i = 0; i < value.length; i++) {
+		Subject s = value[i];
+		result+= s;
+	}
+	return result + "}";
 
+}
 }
 
 

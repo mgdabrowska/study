@@ -31,10 +31,10 @@ public class Usos {
 						new ListSubject()));
 
 			} else if ("2".equals(liczba)) {
-				for (int i = 0; i < list.size(); i++) {
-					Student st = list.get(i);
-					System.out.print("  " + st + " ");
-				}
+				//for (int i = 0; i < list.size(); i++) {
+					//Student st = list.get(i);
+					System.out.print("  " + list + " ");
+				//}
 				System.out.println(" ");
 
 			} else if ("3".equals(liczba)) {
@@ -42,11 +42,12 @@ public class Usos {
 				String przedmiot = sc.nextLine();
 				
 				subject.add(new Subject(przedmiot + " "));
-				for (int i = 0; i < subject.size(); i++) {
+				System.out.println(subject+ ",");
+				//for (int i = 0; i < subject.size(); i++) {
 					
-					System.out.print("  " + subject.get(i) + " ");
+					//System.out.print("  " + subject.get(i) + " ");
 				
-				}
+				//}
 			} else if ("4".equals(liczba)) {
 				System.out.print("Podaj numer studenta  ");
 				int nrStudenta = sc.nextInt();
@@ -54,7 +55,8 @@ public class Usos {
 				int nrPrzedmiotu = sc.nextInt();
 				
 				 System.out.println(" "+ list.get(nrStudenta)+" "+ subject.get(nrPrzedmiotu)+""); 
-				
+				 ListSubject przedmiotyStudenta = list.get(nrStudenta).mySubjects;
+				 System.out.println(przedmiotyStudenta);
 
 			} else if ("5".equals(liczba)) {
 

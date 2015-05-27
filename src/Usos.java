@@ -4,6 +4,7 @@ public class Usos {
 	public static void main(String[] args) {
 		List list = new List();
 		ListSubject subject = new ListSubject();
+		ListMarks marks = new ListMarks();
 		while (true) {
 
 			System.out.println("");
@@ -28,7 +29,7 @@ public class Usos {
 				System.out.println();
 
 				list.add(new Student(imie + " ", nazwisko + " ", pesel1 + " ",
-						"", new ListSubject()));
+						"", new ListSubject() + "", new ListMarks()));
 
 			} else if ("2".equals(liczba)) {
 				// for (int i = 0; i < list.size(); i++) {
@@ -59,6 +60,18 @@ public class Usos {
 				System.out.println("");
 
 			} else if ("5".equals(liczba)) {
+				System.out.print("Podaj ocenê  ");
+				int ocena1 = sc.nextInt();
+
+				marks.add(new Marks( ocena1 ));
+				System.out.println(marks + ",");
+				
+				System.out.println("Podaj numer studenta  ");
+				int nrStudenta = sc.nextInt();
+				System.out.println("Podaj ocenê  ");
+				
+				
+				
 
 			} else if ("6".equals(liczba)) {
 				break;

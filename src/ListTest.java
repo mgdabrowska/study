@@ -14,7 +14,7 @@ public class ListTest {
 		System.out.println();
 
 		list.add(new Student(imie + " ", nazwisko + " ", " ", pesel1 + " ",
-				new ListSubject()));
+				new ListSubject(), new ListMarks()));
 		
 
 		for (int i = 0; i < list.size(); i++) {

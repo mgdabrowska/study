@@ -35,7 +35,7 @@ public class Usos {
 				// for (int i = 0; i < list.size(); i++) {
 				// Student st = list.get(i);
 				// }
-				System.out.print("  " + list.toString() + " ");
+				System.out.print("  " + list + " ");
 				System.out.println(" ");
 
 			} else if ("3".equals(liczba)) {
@@ -69,9 +69,9 @@ public class Usos {
 				int nrStudenta = sc.nextInt();
 				System.out.println(marks + ",");
 				
-				System.out.println(" "+ list.get(nrStudenta) + " "+ marks.get(ocena1)+ " ");
-				//ListMarks ocenyStudenta = list.get(nrStudenta).myMarks;
-				//1ocenyStudenta.add(marks.get(ocena1));
+				System.out.println(" "+ list.get(nrStudenta) + " "+ new Marks( ocena1 ) + " ");
+				ListMarks ocenyStudenta = list.get(nrStudenta).myMarks;
+				ocenyStudenta.add(new Marks( ocena1 ));
 				System.out.println(" ");
 				
 				

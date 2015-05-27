@@ -50,5 +50,13 @@ public class List {
 		value[index] = element;
 
 	}
+	public String toString(){
+		String result= " ";
+		for (int i = 0; i < value.length; i++) {
+			Student s = value[i];
+			result+=s;
+		}
+		return result;
+	}
 
 }

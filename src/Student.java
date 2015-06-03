@@ -1,14 +1,14 @@
-class Student<E> {
+class Student {
 
 	String name;
 	String surname;
 	String birthDate;
 	String pesel;
-	E mySubjects;
-	E myMarks;
+	List mySubjects;
+	List myMarks;
 
 	Student(String name, String surname, String birthDate, String pesel,
-			E mySubjects, E myMarks) {
+			List mySubjects, List myMarks) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;

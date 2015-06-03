@@ -1,5 +1,5 @@
 
-public class Subject {
+public class Subject<E> {
 
 	String nazwa;
 

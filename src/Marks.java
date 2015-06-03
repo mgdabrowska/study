@@ -1,4 +1,4 @@
-public class Marks {
+public class Marks<E> {
 
 	int ocena;
 

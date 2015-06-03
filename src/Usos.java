@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Usos {
-	public static void main(String[] args) {
-		List list = new List();
-		ListSubject subject = new ListSubject();
-		ListMarks marks = new ListMarks();
+	public static <E> void main(String[] args) {
+		List<E> list = new List<E>();
+		List<E> subject = new List<E>();
+		List<E> marks = new List<E>();
 		while (true) {
 
 			System.out.println("");
@@ -28,8 +28,8 @@ public class Usos {
 				String pesel1 = sc.nextLine();
 				System.out.println();
 
-				list.add(new Student(imie + " ", nazwisko + " ", pesel1 + " ",
-						"", new ListSubject() , new ListMarks()));
+				list.add((E) new Student(imie + " ", nazwisko + " ", pesel1 + " ",
+						"", new List() , new List()));
 
 			} else if ("2".equals(liczba)) {
 				// for (int i = 0; i < list.size(); i++) {
@@ -42,7 +42,7 @@ public class Usos {
 				System.out.print("Podaj nazwê  ");
 				String przedmiot = sc.nextLine();
 
-				subject.add(new Subject(przedmiot + " "));
+				subject.add((E) new Subject(przedmiot + " "));
 				System.out.println(subject + ",");
 				// for (int i = 0; i < subject.size(); i++) {
 				// System.out.print("  " + subject.get(i) + " ");
@@ -55,23 +55,23 @@ public class Usos {
 
 				System.out.println(" " + list.get(nrStudenta) + " "
 						+ subject.get(nrPrzedmiotu) + "");
-				ListSubject przedmiotyStudenta = list.get(nrStudenta).mySubjects;
-				przedmiotyStudenta.add(subject.get(nrPrzedmiotu));
+				List<E> przedmiotyStudenta = list.get(nrStudenta).mySubjects;
+				((List<E>) przedmiotyStudenta).add((E) subject.get(nrPrzedmiotu));
 				System.out.println("");
 
 			} else if ("5".equals(liczba)) {
 				System.out.print("Podaj ocenê  ");
 				int ocena1 = sc.nextInt();
 
-				marks.add(new Marks( ocena1 ));
+				marks.add((E) new Marks( ocena1 ));
 				
 				System.out.println("Podaj numer studenta  ");
 				int nrStudenta = sc.nextInt();
 				System.out.println(marks + ",");
 				
 				System.out.println(" "+ list.get(nrStudenta) + " "+ new Marks( ocena1 ) + " ");
-				ListMarks ocenyStudenta = list.get(nrStudenta).myMarks;
-				ocenyStudenta.add(new Marks( ocena1 ));
+				E ocenyStudenta = list.get(nrStudenta).myMarks;
+				((List<E>) ocenyStudenta).add((E) new Marks( ocena1 ));
 				System.out.println(" ");
 				
 				

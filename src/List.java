@@ -1,16 +1,16 @@
-public class List {
-	Student[] value = new Student[0];
+public class List<E> {
+	Object[] value = new Object[0];
 
-	Student get(int index) {
-		return value[index];
+	E get(int index) {
+		return (E) value[index];
 	}
 
 	int size() {
 		return value.length;
 	}
 
-	void add(Student element) {
-		Student[] value1 = new Student[value.length + 1];
+	void add(E element) {
+		Object[] value1 = new Object[value.length + 1];
 		for (int i = 0; i < value.length; ++i) {
 			value1[i] = value[i];
 
@@ -20,7 +20,7 @@ public class List {
 	}
 
 	void remove(int index) {
-		Student[] value1 = new Student[value.length - 1];
+		Object[] value1 = new Object[value.length - 1];
 		for (int i = 0; i < value1.length; i++) {
 			if (i != index) {
 				value1[i] = value[i];
@@ -32,8 +32,8 @@ public class List {
 		value = value1;
 	}
 
-	void addAt(int index, Student element) {
-		Student[] value1 = new Student[value.length + 1];
+	void addAt(int index, E element) {
+		Object[] value1 = new Object[value.length + 1];
 		for (int i = 0; i < index; i++) {
 			value1[i] = value[i];
 
@@ -46,14 +46,14 @@ public class List {
 		value = value1;
 	}
 
-	void change(int index, Student element) {
+	void change(int index, E element) {
 		value[index] = element;
 
 	}
 	public String toString(){
 		String result= " ";
 		for (int i = 0; i < value.length; i++) {
-			Student s = value[i];
+			E s = (E) value[i];
 			result+=s;
 		}
 		return result;

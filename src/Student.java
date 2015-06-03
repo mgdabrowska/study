@@ -4,11 +4,11 @@ class Student {
 	String surname;
 	String birthDate;
 	String pesel;
-	List mySubjects;
-	List myMarks;
+	List<Subject> mySubjects;
+	List<Marks> myMarks;
 
 	Student(String name, String surname, String birthDate, String pesel,
-			List mySubjects, List myMarks) {
+			List<Subject> mySubjects, List<Marks> myMarks) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;

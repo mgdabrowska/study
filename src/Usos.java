@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Usos {
 	public static void main(String[] args) {
-		List list = new List();
-		List subject = new List();
-		List marks = new List();
+		List<Student> list = new List();
+		List<Subject> subject = new List();
+		List<Marks> marks = new List();
+		;
 		while (true) {
 
 			System.out.println("");
@@ -29,7 +30,7 @@ public class Usos {
 				System.out.println();
 
 				list.add( new Student(imie + " ", nazwisko + " ", pesel1 + " ",
-						"", new List<Subject>() , new List<Subject>()));
+						"", new List<Subject>() , new List<Marks>()));
 
 			} else if ("2".equals(liczba)) {
 				// for (int i = 0; i < list.size(); i++) {
@@ -56,7 +57,7 @@ public class Usos {
 				System.out.println(" " + list.get(nrStudenta) + " "
 						+ subject.get(nrPrzedmiotu) + "");
 				 List<Subject> przedmiotyStudenta = list.get(nrStudenta).mySubjects;
-				((List) przedmiotyStudenta).add( subject.get(nrPrzedmiotu));
+				 przedmiotyStudenta.add( subject.get(nrPrzedmiotu));
 				System.out.println("");
 
 			} else if ("5".equals(liczba)) {
@@ -70,8 +71,8 @@ public class Usos {
 				System.out.println(marks + ",");
 				
 				System.out.println(" "+ list.get(nrStudenta) + " "+ new Marks( ocena1 ) + " ");
-				List<Subject> ocenyStudenta = list.get(nrStudenta).myMarks;
-				((List) ocenyStudenta).add( new Marks( ocena1 ));
+				List<Marks> ocenyStudenta = list.get(nrStudenta).myMarks;
+				ocenyStudenta.add( new Marks( ocena1 ));
 				System.out.println(" ");
 				
 				

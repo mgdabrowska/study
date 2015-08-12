@@ -12,8 +12,7 @@ public class PermMissingElem {
         for(int i = 0; i<A.length; i++){
         suma+=A[i];
         }
-        int total = (A.length+1)*(A.length+2)/2;
-        suma= suma - total;
+        suma= suma - (A.length+1)*(A.length+2)/2;;
         return Math.abs(suma);
     
     }

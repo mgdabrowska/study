@@ -3,7 +3,7 @@ package codility;
 public class TapeEquilibrium {
 	public static void main(String[] args) {
 		TapeEquilibrium sc = new TapeEquilibrium ();
-		System.out.println(sc.minWartosc(3,1,2,4,3) == 1);
+		System.out.println(sc.minWartosc(new int[]{3,1,2,4,3}) == 1);
 	
 	}
 	 public int minWartosc(int[] A) {

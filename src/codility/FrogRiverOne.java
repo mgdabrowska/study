@@ -12,15 +12,10 @@ public class FrogRiverOne {
 	public int solution(int X, int[] A) {
 		boolean[] B = new boolean[X+1];
 		int distinc =0;
-		zewnêtrzna:for (int i = 0; i < A.length; i++) {
+		for (int i = 0; i < A.length; i++) {
 			if(!B[A[i]]){
 				B[A[i]]=true;
 				distinc++;
-				//for (int j = 1; j < B.length; j++) {
-					//if(B[j]==false){
-						//continue zewnêtrzna;
-					//}
-				//}
 				if(distinc == X)
 				return i;
 			}

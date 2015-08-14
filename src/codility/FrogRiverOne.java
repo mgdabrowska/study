@@ -9,7 +9,7 @@ public class FrogRiverOne {
 	}
 
 	public int solution(int X, int[] A) {
-		boolean[] B = new boolean[X];
+		boolean[] B = new boolean[X+1];
 		zewnêtrzna:for (int i = 0; i < A.length; i++) {
 			if(A[i]<= X){
 				B[A[i]]=true;
@@ -17,10 +17,9 @@ public class FrogRiverOne {
 					if(B[j]==false){
 						continue zewnêtrzna;
 					}
-					return i;
 				}
 				
-				
+				return i;
 			}
 			
 		}

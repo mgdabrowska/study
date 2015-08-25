@@ -7,12 +7,14 @@ public class MaxCounter {
 		MaxCounter sc = new MaxCounter();
 		System.out.println(Arrays.equals(sc.solution(5, new int[] { 3, 4, 4, 6, 1, 4, 4 }), new int[] {
 						3, 2, 2, 4, 2 }));
+		System.out.println(Arrays.equals(sc.solution(5, new int[] { 6,6,6,6,6 }), new int[] {
+			0,0,0,0,0 }));
 
 	}
 
 	public int[] solution(int N, int[] A) {
 		int[] B = new int[N];
-		int max = Integer.MIN_VALUE;
+		int max = 0;
 		for (int i = 0; i < A.length; i++) {
 			if ( A[i] <= N) {
 				B[A[i]-1]++;

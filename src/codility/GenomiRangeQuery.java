@@ -6,7 +6,7 @@ public class GenomiRangeQuery {
 
 	public static void main(String[] args) {
 		GenomiRangeQuery sc = new GenomiRangeQuery();
-		System.out.println(Arrays.equals(sc.solution('GACACCATA', new int[] { 2, 5, 0}, new int[] { 4, 5, 6 } ));
+		System.out.println(Arrays.equals(sc.solution("CAGCCTA", new int[] { 2, 5, 0}, new int[] { 4, 5, 6 }), new int[]{2,4,1} ));
 
 	}
 
@@ -28,13 +28,38 @@ public class GenomiRangeQuery {
 					tab[i] = 4;
 				}
 			}
+			int[] ones = new int[S.length()];
+			int[] duo = new int[S.length()];
+			int[] trio = new int[S.length()];
+			for (int i = 1; i < tab.length; i++) {
+				ones[0] =(tab[0]==1)?0:Integer.MAX_VALUE;
+				if(tab[i]==1){
+					ones[i]=0;
+				}else{
+					ones[i]=ones[i-1]+1;
+				}
+				duo[0] =(tab[0]==2)?0:Integer.MAX_VALUE;
+				if(tab[i]==2){
+					duo[i]=0;
+				}else{
+					duo[i]=duo[i-1]+1;
+				}
+				trio[0] =(tab[0]==3)?0:Integer.MAX_VALUE;
+				if(tab[i]==3){
+					trio[i]=0;
+				}else{
+					trio[i]=trio[i-1]+1;
+				}
+			}
+			
 			for (int i = 0; i < result.length; i++) {
 			int min = 4 ;
-				for (int j = P[i]; j <= Q[i]; j++) {
-					if(tab[j]< min){
-						min=tab[j];
+				if(ones[Q[i]]==0){
+					min=1;
+				}else{
+					
 					}
-				}
+				
 				result[i]= min;
 			}
 			return result;

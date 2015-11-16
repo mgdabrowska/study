@@ -9,6 +9,9 @@ public class GenomiRangeQuery {
 		System.out.println(Arrays.equals(
 				sc.solution("CAGCCTA", new int[] { 2, 5, 0 }, new int[] { 4, 5,
 						6 }), new int[] { 2, 4, 1 }));
+		System.out.println(Arrays.equals(
+				sc.solution("TTTATTTT", new int[] { 0,0,3,4}, new int[] {2,3,7,7 }), new int[] {4,1,1,4  }));
+		
 
 	}
 
@@ -33,9 +36,9 @@ public class GenomiRangeQuery {
 		int[] ones = new int[S.length()];
 		int[] duo = new int[S.length()];
 		int[] trio = new int[S.length()];
-		ones[0] = (tab[0] == 1) ? 0 : Integer.MAX_VALUE;
-		duo[0] = (tab[0] == 2) ? 0 : Integer.MAX_VALUE;
-		trio[0] = (tab[0] == 3) ? 0 : Integer.MAX_VALUE;
+		ones[0] = (tab[0] == 1) ? 0 : 10000000;
+		duo[0] = (tab[0] == 2) ? 0 : 10000000;
+		trio[0] = (tab[0] == 3) ? 0 : 10000000;
 		for (int i = 1; i < tab.length; i++) {
 			if (tab[i] == 1) {
 				ones[i] = 0;

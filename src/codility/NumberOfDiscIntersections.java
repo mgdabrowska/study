@@ -1,5 +1,9 @@
 package codility;
 
+import java.util.Arrays;
+
+
+
 public class NumberOfDiscIntersections {
 
 	public static void main(String[] args) {
@@ -10,14 +14,26 @@ public class NumberOfDiscIntersections {
 	}
 
 	int solution(int A[], int N) {
-		int ile = 0;
+		int tab_one[] = new int[A.length];
+		int tab_two[] = new int[A.length];
+		
 		for (int i = 0; i < A.length; i++) {
-			for (int j = i + 1; j < A.length; j++) {
-				if(Math.abs(A[i]-A[j])< Math.abs(i-j)&& Math.abs(i-j)< Math.abs(A[i]+A[j])||Math.abs(i-j)== Math.abs(A[i]+A[j])||Math.abs(A[i]-A[j])== Math.abs(i-j) ){
-				ile ++;	
+			tab_one[i] = A[i]+i;
+		}
+		for (int j = 0; j < A.length; j++) {
+			 tab_two[j] = -(A[j]-j);
+		}
+		
+	Arrays.sort(tab_one);
+	Arrays.sort(tab_two);
+	
+	int ile = 0;
+		for (int i = 0; i < tab_one.length; i++) {
+			for (int j = i+1; j < tab_two.length; j++) {
+				if(tab_one[i]>=tab_two[j]){
+					ile ++;
 				}
 			}
-
 		}
 		return ile;
 	}

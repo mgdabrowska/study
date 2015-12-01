@@ -1,6 +1,7 @@
 package codility;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+
 
 public class Nesting {
 
@@ -13,20 +14,19 @@ public class Nesting {
 	}
 
 	public int solution(String S) {
-		int element = 0;
+		ArrayDeque<Character> element = new ArrayDeque<Character>();
 		for (int i = 0; i < S.length(); i++) {
 			if (S.charAt(i) == '(') {
-				element += 1;
+				element.push('(');
 			} else {
-				if (element == 0) {
+				if (element.isEmpty()) {
 					return 0;
 				}
-				element -= 1;
+				element.pop();
 			}
 		}
-		if (element < 0)
-			return 0;
-		if (element == 0)
+		
+		if (element.isEmpty())
 			return 1;
 		else
 			return 0;

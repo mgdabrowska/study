@@ -19,13 +19,13 @@ public class Brackets {
 			} else if (stack.isEmpty()) {
 				return 0;
 			}
-			if (S.charAt(i) == ']' && stack.peek() != '[') {
+			if (S.charAt(i) == ']' && stack.pop() != '[') {
 				return 0;
 			}
-			if (S.charAt(i) == '}' && stack.peek() != '{') {
+			if (S.charAt(i) == '}' && stack.pop() != '{') {
 				return 0;
 			}
-			if (S.charAt(i) == ')' && stack.peek() != '(') {
+			if (S.charAt(i) == ')' && stack.pop() != '(') {
 				return 0;
 			}
 		}

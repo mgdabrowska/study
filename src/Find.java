@@ -1,11 +1,21 @@
+import java.io.File;
+
 
 
 
 public class Find {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String workDir = System.getProperty("user.dir");
-		   System.out.println("Current working directory : " + workDir);
+		File current = new File(".");
+		File[] filesList = current.listFiles();
+        for(File f : filesList){
+            if(f.isDirectory())
+                System.out.println(f.getName());
+            if(f.isFile()){
+                System.out.println(f.getName());
+            }
+        }
+
+	    
 	}
 }

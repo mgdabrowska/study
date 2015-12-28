@@ -17,10 +17,10 @@ public class Find {
 			return;
 		}
 		for (File f : filesList) {
-			if (f.isDirectory())
+			if (f.isDirectory()){
 				System.out.println(f.getPath());
 			PrintFile(f);
-				
+			}
 			if (f.isFile()) {
 				System.out.println(f.getPath());
 			}

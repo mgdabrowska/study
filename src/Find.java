@@ -10,16 +10,18 @@ public class Find {
             System.exit(1);
         }
 		Find f = new Find();
-
+		if(args[1].equals("-name")){
+			f.PrintFile(new File(args[0]), args[2]);
+			
+		}else
 		f.PrintFile(new File(args[0]), null);
-		f.PrintFile(new File(args[0]), "gosia");
 
 		// f.PrintFile(new File(args[1]));
 		// f.PrintFile(new File(Directory));
-		System.out.println("tablica args");
-		for (int i = 0; i < args.length; i++) {
-			System.out.println(i + "  " + args[i]);
-		}
+		//System.out.println("tablica args");
+		//for (int i = 0; i < args.length; i++) {
+		//	System.out.println(i + "  " + args[i]);
+		//}
 
 	}
 

@@ -37,8 +37,7 @@ public class Find {
 					PrintFile(f, name, size);
 				}
 				if (f.isFile() && f.getName().contains(name)) {
-					System.out.println(f.getPath()); // tu jest blad, co zwraca
-														// metoda?
+					System.out.println(f.getPath()); 
 				}
 			}
 			if (name == null && size != null) {
@@ -46,29 +45,29 @@ public class Find {
 					PrintFile(f, name, size);
 				}
 				if (f.isFile()) {
-					if (size.charAt(0) == '-'
-							&& Integer.parseInt(size.substring(1)) > f.length())
-						System.out.println(f.getPath());
+					FileSize(size, f);
 				}
 			} else {
 				if (f.isDirectory()) {
 					PrintFile(f, name, size);
 				}
 				if (f.isFile() && f.getName().contains(name)) {
-					System.out.println(f.getPath());
+					FileSize(size,f);
+					
 				}
 			}
 
 		}
 	}
+
+	private static void FileSize(String size, File f) {
+		if (size.charAt(0) == '-'
+				&& Integer.parseInt(size.substring(1)) > f.length())
+			System.out.println(f.getPath());
+		if (size.charAt(0) == '+'
+				&& Integer.parseInt(size.substring(1)) < f.length())
+			System.out.println(f.getPath());
+		if (Integer.parseInt(size.substring(0)) == f.length())
+			System.out.println(f.getPath());
+	}
 }
-/*
- * if (name == null) { if (f.isDirectory()) { System.out.println(f.getPath());
- * PrintFile(f, name); } if (f.isFile()) { System.out.println(f.getPath()); } }
- * else { if (f.isDirectory()) { PrintFile(f, name); } if (f.isFile() &&
- * f.getName().contains(name)) { System.out.println(f.getPath()); } }
- * 
- * }
- * 
- * }
- */

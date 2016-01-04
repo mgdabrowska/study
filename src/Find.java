@@ -3,71 +3,68 @@ import java.io.File;
 public class Find {
 
 	public static void main(String[] args) {
-		// File current = new File(args[0]);
 		if (args.length == 0) {
-			System.err.println("Musisz podaæ conajmniej jeden argument!" + '\n'
+			System.err.println("Musisz podac conajmniej jeden argument!" + '\n'
 					+ "Przyklad uzycia:" + '\n' + '\t'
 					+ "java -cp {classpath} Find C:\\Users" + "");
 			System.exit(1);
 		}
-		Find f = new Find();
-		if (args[1].equals("-name")) {
-			f.PrintFile(new File(args[0]), args[2], null);
-
-		} else
-			f.PrintFile(new File(args[0]), null, null);
-
-		// f.PrintFile(new File(args[1]));
-		// f.PrintFile(new File(Directory));
-		// System.out.println("tablica args");
-		// for (int i = 0; i < args.length; i++) {
-		// System.out.println(i + "  " + args[i]);
-		// }
-
+		 File current = new File(args[0]);
+		 String name = null;
+		 String size = null;
+		 if(args.length > 1) {
+			 if(args[1].equals("-name")) {
+				 name = args[2];
+			 }
+			 if(args[1].equals("-size")) {
+				 size = args[2];
+			 }
+		 }
+		 
+		 if(args.length > 3) {
+			 if(args[3].equals("-name")) {
+				 name = args[4];
+			 }
+			 if(args[3].equals("-size")) {
+				 size = args[4];
+			 }
+		 }
+		 
+		 printFile(current, name, size);
+		 
 	}
 
-	public static void PrintFile(File current, String name, String size) {
+	public static void printFile(File current, String name, String size) {
 		File[] filesList = current.listFiles();
 		if (filesList == null) {
 			return;
 		}
 		for (File f : filesList) {
-			if (name != null && size == null) {
-				if (f.isDirectory()) {
-					PrintFile(f, name, size);
-				}
-				if (f.isFile() && f.getName().contains(name)) {
-					System.out.println(f.getPath()); 
-				}
+			if(acceptByName(name, f) && acceptBySize(size, f)) {
+				System.out.println(f.getPath()+" "+f.length());
 			}
-			if (name == null && size != null) {
-				if (f.isDirectory()) {
-					PrintFile(f, name, size);
-				}
-				if (f.isFile()) {
-					FileSize(size, f);
-				}
-			} else {
-				if (f.isDirectory()) {
-					PrintFile(f, name, size);
-				}
-				if (f.isFile() && f.getName().contains(name)) {
-					FileSize(size,f);
-					
-				}
+			if(f.isDirectory()) {
+				printFile(f, name, size);
 			}
-
 		}
 	}
 
-	private static void FileSize(String size, File f) {
+	private static boolean acceptByName(String name, File f) {
+		if(name == null) return true;
+		return f.getName().contains(name);
+		
+	}
+
+	private static boolean acceptBySize(String size, File f) {
+		if(size == null) return true;
 		if (size.charAt(0) == '-'
 				&& Integer.parseInt(size.substring(1)) > f.length())
-			System.out.println(f.getPath());
+			return true;
 		if (size.charAt(0) == '+'
 				&& Integer.parseInt(size.substring(1)) < f.length())
-			System.out.println(f.getPath());
+			return true;
 		if (Integer.parseInt(size.substring(0)) == f.length())
-			System.out.println(f.getPath());
+			return true;
+		return false;
 	}
 }

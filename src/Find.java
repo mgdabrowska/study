@@ -9,30 +9,29 @@ public class Find {
 					+ "java -cp {classpath} Find C:\\Users" + "");
 			System.exit(1);
 		}
-		 File current = new File(args[0]);
-		 String name = null;
-		 String size = null;
-		 int i = 1;
-		 if(args.length > i) {
-			 if(args[i].equals("-name")) {
-				 name = args[i+1];
-			 }
-			 if(args[i].equals("-size")) {
-				 size = args[i+1];
-			 }
-		 }
-		  i =3;
-		 if(args.length > i) {
-			 if(args[i].equals("-name")) {
-				 name = args[i+1];
-			 }
-			 if(args[i].equals("-size")) {
-				 size = args[i+1];
-			 }
-		 }
-		 
-		 printFile(current, name, size);
-		 
+		File current = new File(args[0]);
+		String name = null;
+		String size = null;
+		int i = 1;
+		wartoscZmiennych(name, size, args, i);
+		i = 3;
+		wartoscZmiennych(name, size, args, i);
+
+		//printFile(current, name, size);
+
+	}
+
+	public static void wartoscZmiennych(String name, String size,
+			String[] args, Integer i) {
+		System.out.println(name +" "+ size + " ");
+		if (args.length > i) {
+			if (args[i].equals("-name")) {
+				name = args[i + 1];
+			}
+			if (args[i].equals("-size")) {
+				size = args[i + 1];
+			}
+		}
 	}
 
 	public static void printFile(File current, String name, String size) {
@@ -41,23 +40,25 @@ public class Find {
 			return;
 		}
 		for (File f : filesList) {
-			if(acceptByName(name, f) && acceptBySize(size, f)) {
-				System.out.println(f.getPath()+" "+f.length());
+			if (acceptByName(name, f) && acceptBySize(size, f)) {
+				System.out.println(f.getPath() + " " + f.length());
 			}
-			if(f.isDirectory()) {
+			if (f.isDirectory()) {
 				printFile(f, name, size);
 			}
 		}
 	}
 
 	private static boolean acceptByName(String name, File f) {
-		if(name == null) return true;
+		if (name == null)
+			return true;
 		return f.getName().contains(name);
-		
+
 	}
 
 	private static boolean acceptBySize(String size, File f) {
-		if(size == null) return true;
+		if (size == null)
+			return true;
 		if (size.charAt(0) == '-'
 				&& Integer.parseInt(size.substring(1)) > f.length())
 			return true;

@@ -12,21 +12,22 @@ public class Find {
 		 File current = new File(args[0]);
 		 String name = null;
 		 String size = null;
-		 if(args.length > 1) {
-			 if(args[1].equals("-name")) {
-				 name = args[2];
+		 int i = 1;
+		 if(args.length > i) {
+			 if(args[i].equals("-name")) {
+				 name = args[i+1];
 			 }
-			 if(args[1].equals("-size")) {
-				 size = args[2];
+			 if(args[i].equals("-size")) {
+				 size = args[i+1];
 			 }
 		 }
-		 
-		 if(args.length > 3) {
-			 if(args[3].equals("-name")) {
-				 name = args[4];
+		  i =3;
+		 if(args.length > i) {
+			 if(args[i].equals("-name")) {
+				 name = args[i+1];
 			 }
-			 if(args[3].equals("-size")) {
-				 size = args[4];
+			 if(args[i].equals("-size")) {
+				 size = args[i+1];
 			 }
 		 }
 		 

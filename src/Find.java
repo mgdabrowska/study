@@ -10,30 +10,23 @@ public class Find {
 			System.exit(1);
 		}
 		File current = new File(args[0]);
-		String name = null;
-		String size = null;
-		int i = 1;
-		wartoscZmiennych(name, size, args, i);
-		i = 3;
-		wartoscZmiennych(name, size, args, i);
+		String name = readValue("-name", args);
+		String size = readValue("-size", args);
 
-		//printFile(current, name, size);
+		printFile(current, name, size);
 
 	}
 
-	public static void wartoscZmiennych(String name, String size,
-			String[] args, Integer i) {
-		System.out.println(name +" "+ size + " ");
-		if (args.length > i) {
-			if (args[i].equals("-name")) {
-				name = args[i + 1];
-			}
-			if (args[i].equals("-size")) {
-				size = args[i + 1];
+	private static String readValue(String key, String[] args) {
+		for (int i = 0; i < args.length; i++) {
+			if(args[i].equals(key)) {
+				return args[i+1];
 			}
 		}
+		return null;
 	}
 
+	
 	public static void printFile(File current, String name, String size) {
 		File[] filesList = current.listFiles();
 		if (filesList == null) {

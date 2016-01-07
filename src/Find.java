@@ -12,10 +12,11 @@ public class Find {
 		File current = new File(args[0]);
 		String name = readValue("-name", args);
 		String size = readValue("-size", args);
-
-		printFile(current, name, size);
+		boolean read = acceptOfWriteable("-writeable",current, args);
+		printFile(current, name, size, read,args);
 
 	}
+	
 
 	private static String readValue(String key, String[] args) {
 		for (int i = 0; i < args.length; i++) {
@@ -27,17 +28,17 @@ public class Find {
 	}
 
 	
-	public static void printFile(File current, String name, String size) {
+	public static void printFile(File current, String name, String size, boolean write, String[] args) {
 		File[] filesList = current.listFiles();
 		if (filesList == null) {
 			return;
 		}
 		for (File f : filesList) {
-			if (acceptByName(name, f) && acceptBySize(size, f)) {
+			if (acceptByName(name, f) && acceptBySize(size, f) && acceptOfWriteable("-writeable", f, args)) {
 				System.out.println(f.getPath() + " " + f.length());
 			}
 			if (f.isDirectory()) {
-				printFile(f, name, size);
+				printFile(f, name, size,write, args);
 			}
 		}
 	}
@@ -61,5 +62,17 @@ public class Find {
 		if (Integer.parseInt(size.substring(0)) == f.length())
 			return true;
 		return false;
+	}
+	private static boolean acceptOfWriteable(String key, File f, String args[]){
+		System.out.print("dostaje argument "+ f.getAbsolutePath());
+		for (int i = 0; i < args.length; i++) {
+			if(args[i].equals(key)){
+				System.out.println("zwracamy "+ f.canWrite());
+				return f.canWrite();
+			}
+		}
+		 System.out.println("zwracam false");
+		return false;	
+		
 	}
 }

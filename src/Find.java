@@ -35,7 +35,7 @@ public class Find {
 
 	void printFile(List<Tester> testers, File f) {
 		for (Tester test : testers) {
-			if (test.accept(args)) {
+			if (test.test(f)) {
 				System.out.println(f.getPath() + " " + f.length());
 			}
 			if (f.isDirectory()) {

@@ -36,13 +36,29 @@ public class Find {
 	}
 
 	static void printFile(List<Tester> testers, File f) {
-		for (Tester test : testers) {
-			if (test.test(f)) {
-				System.out.println(f.getPath() + " " + f.length());
+		File[] filesList = f.listFiles();
+		//file f might be deleted
+		if (filesList == null) {
+			return;
+		}
+		for (File file : filesList) {
+			boolean canBePrinted = true;
+			for(int i = 0; i < testers.size(); i++) {
+				canBePrinted |= testers.get(i).test(file);
+				
+				if(!canBePrinted) {
+					break;
+				}
 			}
-			if (f.isDirectory()) {
-				printFile(testers, f);
+			
+			if(canBePrinted) {
+				System.out.println(file.getPath());
+			}
+			
+			if(file.isDirectory()) {
+				printFile(testers, file);
 			}
 		}
+		
 	}
 }

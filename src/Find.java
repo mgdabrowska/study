@@ -13,6 +13,7 @@ public class Find {
 					+ "java -cp {classpath} Find C:\\Users" + "");
 			System.exit(1);
 		}
+		File f = new File(args[0]);
 		List<Tester> testers = new ArrayList<Tester>();
 		Tester s = new SizeTester();
 		if (s.accept(args)) {
@@ -30,10 +31,11 @@ public class Find {
 		if (d.accept(args)) {
 			testers.add(d);
 		}
+		printFile(testers, f);
 
 	}
 
-	void printFile(List<Tester> testers, File f) {
+	static void printFile(List<Tester> testers, File f) {
 		for (Tester test : testers) {
 			if (test.test(f)) {
 				System.out.println(f.getPath() + " " + f.length());

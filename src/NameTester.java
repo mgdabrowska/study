@@ -15,8 +15,9 @@ public class NameTester implements Tester {
 
 	@Override
 	public boolean test(File f) {
-		// TODO Auto-generated method stub
-		return false;
+		if (name == null)
+			return true;
+		return f.getName().contains(name);
 	}
 
 }

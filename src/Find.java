@@ -42,14 +42,7 @@ public class Find {
 			return;
 		}
 		for (File file : filesList) {
-			boolean canBePrinted = true;
-			for(int i = 0; i < testers.size(); i++) {
-				canBePrinted |= testers.get(i).test(file);
-				
-				if(!canBePrinted) {
-					break;
-				}
-			}
+			boolean canBePrinted = extracted(testers, file);
 			
 			if(canBePrinted) {
 				System.out.println(file.getPath());
@@ -60,5 +53,17 @@ public class Find {
 			}
 		}
 		
+	}
+
+	private static boolean extracted(List<Tester> testers, File file) {
+		boolean canBePrinted = true;
+		for(int i = 0; i < testers.size(); i++) {
+			canBePrinted &= testers.get(i).test(file);
+			
+			if(!canBePrinted) {
+				break;
+			}
+		}
+		return canBePrinted;
 	}
 }

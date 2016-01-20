@@ -1,8 +1,8 @@
 import java.io.File;
 
 public abstract class AbstractTest implements Tester {
-	private final String parameterName; 
-    private String parameterValue;  
+	protected final String parameterName; 
+    protected String parameterValue;  
     
     public AbstractTest(String name) {
         parameterName = name;

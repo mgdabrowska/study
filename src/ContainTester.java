@@ -2,27 +2,19 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class ContainTester implements Tester {
-	String contain = null;
-
-	@Override
-	public boolean accept(String[] args) {
-		for (int i = 0; i < args.length; i++) {
-			if (args[i].equals("-contain"))
-				contain = args[i + 1];
-			return true;
-		}
-		return false;
+public class ContainTester extends AbstractTest implements Tester {
+	public ContainTester(){
+		super("-contain");
 	}
 
 	@Override
 	public boolean test(File f) {
-		if (contain == null)
+		if (parameterName == null)
 			return true;
 		try {
 			Scanner scanner = new Scanner(f);
 			while (scanner.hasNext()) {
-				if (scanner.nextLine().contains(contain)) {
+				if (scanner.nextLine().contains(parameterValue)) {
 					return true;
 				}
 			}

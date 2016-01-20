@@ -1,23 +1,15 @@
 import java.io.File;
 
-public class NameTester implements Tester {
-	String name = null;
-
-	@Override
-	public boolean accept(String[] args) {
-		for (int i = 0; i < args.length; i++) {
-			if (args[i].equals("-name"))
-				name = args[i + 1];
-			return true;
-		}
-		return false;
+public class NameTester extends AbstractTest implements Tester {
+	public NameTester(){
+		super("-name");
 	}
 
 	@Override
 	public boolean test(File f) {
-		if (name == null)
+		if (parameterName == null)
 			return true;
-		return f.getName().contains(name);
+		return f.getName().contains(parameterValue);
 	}
 
 }

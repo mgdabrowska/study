@@ -1,15 +1,8 @@
 import java.io.File;
 
-public class WriteableTester implements Tester {
-	String writeable = null;
-
-	@Override
-	public boolean accept(String[] args) {
-		for (int i = 0; i < args.length; i++) {
-			if (args[i].equals("-writeable"))
-				return true;
-		}
-		return false;
+public class WriteableTester extends AbstractTest implements Tester {
+	public WriteableTester(){
+		super("-writeable");
 	}
 
 	@Override
